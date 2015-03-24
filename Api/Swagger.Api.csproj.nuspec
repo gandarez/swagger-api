@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>Swagger.Api</id>
+    <version>$version$</version>
+    <authors>Carlos Henrique Gandarez</authors>
+    <owners>Carlos Henrique Gandarez</owners>
+    <licenseUrl>http://choosealicense.com/licenses/mit/</licenseUrl>
+    <projectUrl>https://github.com/gandarez/swagger-api</projectUrl>
+    <iconUrl>http://gandarez.com.br/swagger/swagger.jpg</iconUrl>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <description>$description$</description>
+    <releaseNotes>Initial version.</releaseNotes>
+    <copyright>Copyright 2015</copyright>
+    <tags>swagger api documentation framework aspnet rest webapi docs</tags>
+    <dependencies>
+      <dependency id="Json.NET" version="6.0.8" />
+      <dependency id="Microsoft.AspNet.WebApi.Core" version="5.2.3" />
+      <dependency id="Microsoft.AspNet.WebApi.Client" version="5.2.3" />
+    </dependencies>
+  </metadata>
+</package>
