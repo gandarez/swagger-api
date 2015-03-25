@@ -12,3 +12,5 @@ The code in this repository contains the code for the following NuGet packages:
 ### Using
 
 Download all required libraries from https://github.com/swagger-api/swagger-ui into your WebApi project.
+
+Examples coming soon
