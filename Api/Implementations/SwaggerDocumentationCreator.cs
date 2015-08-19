@@ -41,7 +41,7 @@ namespace Swagger.Api.Implementations
             _swaggerDocumentationTools.ApiOperationResponseMessages = apiOperationResponseMessages;
         }
 
-        public SwaggerApiResource GetApiResource(Type controllerType, String baseUrl)
+        public SwaggerApiResource GetApiResource(Type controllerType, string baseUrl)
         {
             return new SwaggerApiResource
             {
@@ -91,7 +91,7 @@ namespace Swagger.Api.Implementations
 
         private static string GetControllerPath(Type controllerType)
         {           
-            return String.Format("/{0}", controllerType.Name.Replace(ControllerEnding, ""));
+            return string.Format("/{0}", controllerType.Name.Replace(ControllerEnding, string.Empty));
         }
 
         private string GetControllerDescription(Type controllerType)

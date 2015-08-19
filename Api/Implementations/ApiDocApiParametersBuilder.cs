@@ -62,7 +62,7 @@ namespace Swagger.Api.Implementations
             return (stripped.Split(':').Count() == 1) ? DefaultType : stripped.Split(':')[1];
         }
 
-        private static string GetParamType(String match, string url)
+        private static string GetParamType(string match, string url)
         {
             return (url.IndexOf(match, StringComparison.Ordinal) < ((url.IndexOf('?') == -1) ? url.Length : url.IndexOf('?')) ? "path" : "query");
         }

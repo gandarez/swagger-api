@@ -26,15 +26,15 @@ namespace Swagger.Api.Implementations
 
         private readonly List<Type> _exclusions = new List<Type>
 		{
-			typeof( String ),
-			typeof( Type ),
-			typeof( DateTime ),
-			typeof( TimeSpan ),
-			typeof( Decimal ),
-			typeof( Boolean )
+			typeof(String),
+			typeof(Type),
+			typeof(DateTime),
+			typeof(TimeSpan),
+			typeof(Decimal),
+			typeof(Boolean)
 		};
 
-        public virtual Dictionary<String, ApiDocModel> GetModels(Type type)
+        public virtual Dictionary<string, ApiDocModel> GetModels(Type type)
         {
             if (IsAList(type))
                 type = GetGenericArgument(type, 0);
@@ -54,8 +54,8 @@ namespace Swagger.Api.Implementations
             foreach (var property in type.GetProperties().Where(p => !ShouldIgnore(p)))
             {
                 var propertyType = property.PropertyType;
-                var modelProperty = DefaultModelProperty(property);                         
-                
+                var modelProperty = DefaultModelProperty(property);
+
                 if (IsAList(propertyType))
                 {
                     propertyType = GetGenericArgument(propertyType, 0);
@@ -81,7 +81,7 @@ namespace Swagger.Api.Implementations
                 else if (propertyType.IsClass)
                 {
                     modelProperty = GetComplexTypeModelProperty(propertyType);
-                }                
+                }
 
                 GetNonPrimitiveModels(propertyType, apiDocModels);
                 apiDocModels.First().Value.Properties.Add(property.Name, modelProperty);
@@ -227,15 +227,15 @@ namespace Swagger.Api.Implementations
             return propertyType.IsClass && !_exclusions.Contains(propertyType);
         }
 
-        private Dictionary<String, ApiDocModel> GetKeyValuePairModel(Type key, Type value)
+        private Dictionary<string, ApiDocModel> GetKeyValuePairModel(Type key, Type value)
         {
-            return new Dictionary<String, ApiDocModel>
+            return new Dictionary<string, ApiDocModel>
 			{
 				{
 					"KeyValuePair", new ApiDocModel
 					{
 						Id = "KeyValuePair",
-						Properties = new Dictionary<String, ApiDocModelProperty>
+						Properties = new Dictionary<string, ApiDocModelProperty>
 						{
 							{
 								"Key", new ApiDocModelProperty
@@ -255,16 +255,16 @@ namespace Swagger.Api.Implementations
 			};
         }
 
-        private static Dictionary<String, ApiDocModel> InitializeApiDocModels(string name)
+        private static Dictionary<string, ApiDocModel> InitializeApiDocModels(string name)
         {
-            return new Dictionary<String, ApiDocModel>
+            return new Dictionary<string, ApiDocModel>
 			{
 				{
 					name, new ApiDocModel
 					{
 						Id = name,
-						Properties = new Dictionary<String, ApiDocModelProperty>(),
-						Required = new List<String>()
+						Properties = new Dictionary<string, ApiDocModelProperty>(),
+						Required = new List<string>()
 					}
 				}
 			};

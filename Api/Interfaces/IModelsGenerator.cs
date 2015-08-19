@@ -6,6 +6,6 @@ namespace Swagger.Api.Interfaces
 {
     internal interface IModelsGenerator
     {
-        Dictionary<String, ApiDocModel> GetModels(Type type);
+        Dictionary<string, ApiDocModel> GetModels(Type type);
     }
 }

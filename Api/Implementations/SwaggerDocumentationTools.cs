@@ -35,7 +35,7 @@ namespace Swagger.Api.Implementations
             }).ToList();
         }
 
-        private static string GetPath(String url)
+        private static string GetPath(string url)
         {
             return (url.IndexOf('?') == -1) ? url : url.Substring(0, url.IndexOf('?'));
         }

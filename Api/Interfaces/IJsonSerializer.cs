@@ -1,9 +1,7 @@
-﻿using System;
-
-namespace Swagger.Api.Interfaces
+﻿namespace Swagger.Api.Interfaces
 {
-	public interface IJsonSerializer
-	{
-		String SerializeObject( Object objectToBeEncoded );
-	}
+    public interface IJsonSerializer
+    {
+        string SerializeObject(object objectToBeEncoded);
+    }
 }

@@ -67,7 +67,7 @@ namespace Swagger.Api.Implementations
 
         public string GetApiOperaiontType(Type typeConvert)
         {
-            var ret = "";
+            var ret = string.Empty;
 
             TypeSwitch.Do(
                 typeConvert,
@@ -107,7 +107,7 @@ namespace Swagger.Api.Implementations
                 TypeSwitch.Case<Boolean?>(() => ret = "boolean"),
                 TypeSwitch.Case<DateTime>(() => ret = "string"),
                 TypeSwitch.Case<DateTime?>(() => ret = "string"),
-                TypeSwitch.Default(() => ret = ""));
+                TypeSwitch.Default(() => ret = string.Empty));
 
             return ret;
         }
@@ -124,7 +124,7 @@ namespace Swagger.Api.Implementations
 
         private static string ArrayTypeToText(Type returnType)
         {
-            return String.Format("array[{0}]", returnType.GetElementType().Name);
+            return string.Format("array[{0}]", returnType.GetElementType().Name);
         }
 
         private static bool IsArray(Type returnType)
@@ -145,7 +145,7 @@ namespace Swagger.Api.Implementations
 
         private static string ListTypeToText(Type returnType)
         {
-            return String.Format("array[{0}]", returnType.GetGenericArguments()[0].Name);
+            return string.Format("array[{0}]", returnType.GetGenericArguments()[0].Name);
         }
 
         private static string RemoveGenericInfo(Type type)

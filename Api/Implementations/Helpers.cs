@@ -47,7 +47,10 @@ namespace Swagger.Api.Implementations
             {
                 result = (T)System.Convert.ChangeType(enumeration, typeof(T));
             }
-            catch (Exception ex) { }
+            catch (Exception)
+            {
+                // ignored
+            }
 
             return result;
         }

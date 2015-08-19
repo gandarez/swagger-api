@@ -39,7 +39,7 @@ namespace Swagger.Api
             _swaggerDocumentationCreator.AddApiOperationResponseMessages(apiOperationResponseMessages);
         }
 
-        public String GetSwaggerApiList()
+        public string GetSwaggerApiList()
         {
             var allApiControllers = _swaggerDocumentationAssemblyTools.GetApiControllerTypes(typeof(TBaseApiControllerType));
             var pertinentApiControllers = _swaggerDocumentationAssemblyTools.GetTypesThatAreDecoratedWithApiDocumentationAttribute(allApiControllers);
@@ -48,7 +48,7 @@ namespace Swagger.Api
             return _jsonSerializer.SerializeObject(swaggerContents);
         }
 
-        public String GetControllerDocumentation(Type controllerType, String baseUrl)
+        public string GetControllerDocumentation(Type controllerType, string baseUrl)
         {
             var apiResource = _swaggerDocumentationCreator.GetApiResource(controllerType, baseUrl);
             return _jsonSerializer.SerializeObject(apiResource);
